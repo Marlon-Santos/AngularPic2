@@ -1,0 +1,6 @@
+<ol *ngFor="let photos of photosGroup" class="row list-unstyled">
+  <li class="col-4" *ngFor="let photo of photos">
+    <app-photo [linkImage]="photo.url" [description]="photo.description">
+    </app-photo>
+  </li>
+</ol>
