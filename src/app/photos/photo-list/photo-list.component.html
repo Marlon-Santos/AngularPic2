@@ -1,0 +1,6 @@
+<div class="row justify-content-around align-items-center">
+  <div class="col-4" *ngFor="let photo of photos">
+    <app-photo [linkImage]="photo.url" [description]="photo.description">
+    </app-photo>
+  </div>
+</div>
