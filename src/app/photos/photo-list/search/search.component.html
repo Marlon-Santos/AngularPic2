@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="form-inline">
+    <input
+      #searchText
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Photo Name"
+      aria-label="Search"
+      (input)="filter(searchText.value)"
+    />
+  </div>
+</nav>
