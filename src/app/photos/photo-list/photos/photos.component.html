@@ -1,9 +1,8 @@
 <div class="alert alert-secondary" role="alert " *ngIf="!photos.length">
   image not found
 </div>
-<ol *ngFor="let photos of photosGroup" class="row list-unstyled">
+<ol *ngFor="let photos of photosGroup" class="row list-unstyled no-gutters">
   <li class="col-4" *ngFor="let photo of photos">
-    <app-photo [linkImage]="photo.url" [description]="photo.description">
-    </app-photo>
+    <app-photo [photoInfo]="photo"> </app-photo>
   </li>
 </ol>

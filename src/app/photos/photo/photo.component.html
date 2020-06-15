@@ -1,1 +1,12 @@
-<img class="img-fluid img-thumbnail" [src]="linkImage" [alt]="description" />
+<app-card
+  [title]="photoInfo.description"
+  [likes]="photoInfo.likes"
+  [comments]="photoInfo.comments"
+  appDarkOnHover
+>
+  <img
+    class="img-thumbnail w-100"
+    [src]="photoInfo.url"
+    [alt]="photoInfo.description"
+  />
+</app-card>

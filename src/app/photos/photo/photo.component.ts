@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Photos } from '../model/Photos.interface';
 
 @Component({
   selector: 'app-photo',
@@ -6,8 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./photo.component.scss'],
 })
 export class PhotoComponent implements OnInit {
-  @Input() linkImage: string;
-  @Input() description: string;
+  @Input() photoInfo: Photos;
 
   constructor() {}
 
