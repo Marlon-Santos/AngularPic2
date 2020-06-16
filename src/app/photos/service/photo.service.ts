@@ -4,9 +4,8 @@ import { Photos } from '../model/Photos.interface';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Params } from '@angular/router';
 
-const URL_PHOTOS = (name: string) => `${environment.URL_PHOTOS}/${name}/photos`;
+const URL_PHOTOS = (name: string) => `${environment.URL}/${name}/photos`;
 
 @Injectable({
   providedIn: 'root',
