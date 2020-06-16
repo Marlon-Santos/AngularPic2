@@ -38,9 +38,11 @@ export class SingInComponent implements OnInit {
     const password = this.formGroup.get('password').value;
     const user: User = { userName, password };
     this.authService.authenticator(user).subscribe(
-      (sucess) => this.router.navigate(['user', userName, 'photos']),
+      (sucess) => {
+        this.router.navigate(['user', userName, 'photos']);
+      },
       (error) => {
-        alert('alguma informação não está correta, por favor tente novamente');
+        alert(error.message);
         this.formGroup.reset();
         this.render.selectRootElement('#userName').focus();
       }
