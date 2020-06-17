@@ -1,0 +1,8 @@
+<header
+  class="row justify-content-between no-gutters p-5 text-center"
+  *ngIf="user$ | async as user"
+>
+  <div class="col-4"><h2>AngularPic2</h2></div>
+  <div class="col-4">INFO</div>
+  <div class="col-4">{{ user.name }}</div>
+</header>
