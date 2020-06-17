@@ -3,9 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
 import { take, tap } from 'rxjs/operators';
-import { User } from '../model/User.interface';
-import { TokenService } from './token.service';
-import { error } from 'protractor';
+import { UserLogin as User } from '../model/User.interface';
+import { UserService } from './user.service';
 
 const URL = environment.URL + '/user/login';
 
@@ -13,14 +12,12 @@ const URL = environment.URL + '/user/login';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient, private tokenService: TokenService) {}
+  constructor(private http: HttpClient, private userService: UserService) {}
 
   authenticator(user: User) {
     return this.http.post(URL, user, { observe: 'response' }).pipe(
       take(1),
-      tap((res) =>
-        this.tokenService.setToken(res.headers.get('x-access-token'))
-      )
+      tap((res) => this.userService.setToken(res.headers.get('x-access-token')))
     );
   }
 }
