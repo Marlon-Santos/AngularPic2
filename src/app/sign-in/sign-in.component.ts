@@ -7,9 +7,8 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../core/services/auth.service';
-import { User } from '../core/model/User.interface';
+import { UserLogin as User } from '../core/model/User.interface';
 import { Router } from '@angular/router';
-import { PlataformService } from '../core/services/plataform.service';
 
 @Component({
   selector: 'app-sing-in',
