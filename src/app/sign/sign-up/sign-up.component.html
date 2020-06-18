@@ -1,0 +1,94 @@
+<div class="p-5">
+  <form [formGroup]="formGroup" (submit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        aria-describedby="email"
+        formControlName="email"
+        id="email"
+      />
+      <small *ngIf="formGroup.get('email')?.errors?.required">
+        Please provide a valid email, this camp is required.
+      </small>
+      <small *ngIf="formGroup.get('email')?.errors?.email">
+        Please provide a valid email, this camp required an email.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userName"
+        aria-describedby="fullName"
+        formControlName="fullName"
+        id="fullName"
+      />
+      <small *ngIf="formGroup.get('fullName')?.errors?.required">
+        Please provide a valid name, this camp is required.
+      </small>
+      <small *ngIf="formGroup.get('fullName')?.errors?.minlength">
+        Please provide a valid name, this camp required min 6 characters.
+      </small>
+      <small *ngIf="formGroup.get('fullName')?.errors?.maxlength">
+        Please provide a valid name, this camp required max 26 characters.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userName"
+        aria-describedby="userName"
+        formControlName="userName"
+        id="userName"
+      />
+      <small *ngIf="formGroup.get('userName')?.errors?.required">
+        Please provide a valid userName, this camp is required.
+      </small>
+      <small *ngIf="formGroup.get('userName')?.errors?.minlength">
+        Please provide a valid userName, this camp required min 6 characters.
+      </small>
+      <small *ngIf="formGroup.get('userName')?.errors?.maxlength">
+        Please provide a valid userName, this camp required max 12 characters.
+      </small>
+      <small *ngIf="formGroup.get('userName')?.errors?.pattern">
+        Please provide a valid userName, first character need be a letter.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+      />
+
+      <small *ngIf="formGroup.get('password')?.errors?.required">
+        Please provide a valid password, this camp is required.
+      </small>
+      <small *ngIf="formGroup.get('password')?.errors?.minlength">
+        Please provide a valid password, this camp required min 6 characters.
+      </small>
+      <small *ngIf="formGroup.get('password')?.errors?.maxlength">
+        Please provide a valid password, this camp required max 12 characters.
+      </small>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="formGroup.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

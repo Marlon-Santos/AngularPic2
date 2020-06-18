@@ -6,8 +6,8 @@ import {
   Renderer2,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../core/services/auth.service';
-import { UserLogin as User } from '../core/model/User.interface';
+import { AuthService } from '../../core/services/auth.service';
+import { UserLogin as User } from '../../core/model/User.interface';
 import { Router } from '@angular/router';
 
 @Component({

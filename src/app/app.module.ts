@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhotosModule } from './photos/photos.module';
 import { ErrorsModule } from './errors/errors.module';
-import { SingInModule } from './sign-in/sign-in.module';
 import { CoreModule } from './core/core.module';
+import { SignModule } from './sign/sign.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -14,7 +14,7 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     PhotosModule,
     ErrorsModule,
-    SingInModule,
+    SignModule,
     CoreModule,
   ],
   providers: [],
