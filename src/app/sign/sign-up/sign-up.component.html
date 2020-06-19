@@ -3,6 +3,7 @@
     <div class="form-group">
       <label for="email">Email</label>
       <input
+        #email
         type="text"
         class="form-control"
         id="email"
@@ -15,6 +16,9 @@
       </small>
       <small *ngIf="formGroup.get('email')?.errors?.email">
         Please provide a valid email, this camp required an email.
+      </small>
+      <small *ngIf="formGroup.get('email').valid" style="color: green;">
+        Valid Email
       </small>
     </div>
 
@@ -37,6 +41,9 @@
       <small *ngIf="formGroup.get('fullName')?.errors?.maxlength">
         Please provide a valid name, this camp required max 26 characters.
       </small>
+      <small *ngIf="formGroup.get('fullName').valid" style="color: green;">
+        Valid Full Name
+      </small>
     </div>
 
     <div class="form-group">
@@ -58,8 +65,14 @@
       <small *ngIf="formGroup.get('userName')?.errors?.maxlength">
         Please provide a valid userName, this camp required max 12 characters.
       </small>
-      <small *ngIf="formGroup.get('userName')?.errors?.pattern">
-        Please provide a valid userName, first character need be a letter.
+      <small *ngIf="formGroup.get('userName')?.errors?.firtsLetterLowerCase">
+        Please provide a valid userName, first character need be lower case.
+      </small>
+      <small *ngIf="formGroup.get('userName')?.errors?.existUserName">
+        Please provide a valid userName, this userName it's already being used.
+      </small>
+      <small *ngIf="formGroup.get('userName').valid" style="color: green;">
+        Valid User Name
       </small>
     </div>
 
@@ -81,12 +94,18 @@
       <small *ngIf="formGroup.get('password')?.errors?.maxlength">
         Please provide a valid password, this camp required max 12 characters.
       </small>
+      <small *ngIf="formGroup.get('password').valid" style="color: green;">
+        Valid Password
+      </small>
+    </div>
+    <div class="mb-3">
+      <a [routerLink]="['']"> have an account, login here</a>
     </div>
 
     <button
       type="submit"
       class="btn btn-primary"
-      [disabled]="formGroup.invalid"
+      [disabled]="formGroup.invalid || formGroup.pending"
     >
       Submit
     </button>

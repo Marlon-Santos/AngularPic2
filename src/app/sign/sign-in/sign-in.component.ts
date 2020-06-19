@@ -31,6 +31,7 @@ export class SingInComponent implements OnInit {
       password: ['', Validators.required],
       stayLoged: [true],
     });
+    this.render.selectRootElement('#userName').focus();
   }
   onSubmit() {
     const userName = this.formGroup.get('userName').value;
