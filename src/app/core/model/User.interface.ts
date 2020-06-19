@@ -8,3 +8,10 @@ export interface UserLogged {
   name: string;
   email: string;
 }
+
+export interface NewUser {
+  userName: string;
+  fullName: string;
+  email: string;
+  password: string;
+}
