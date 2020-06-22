@@ -14,7 +14,6 @@ import { SignModule } from './sign/sign.module';
     AppRoutingModule,
     PhotosModule,
     ErrorsModule,
-    SignModule,
     CoreModule,
   ],
   providers: [],
